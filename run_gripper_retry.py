@@ -33,6 +33,12 @@ def find_omissions(pred):
     undefined = grippers - carrying - free
     if undefined:
         probs.append(f"these grippers have no state, mark each free or carrying: {', '.join(sorted(undefined))}")
+    # every ball mentioned must be declared with (ball ballN)
+    mentioned = set(re.findall(r"\((?:at|carry) (ball\d+)", pred))
+    declared = set(re.findall(r"\(ball (ball\d+)\)", pred))
+    undeclared = mentioned - declared
+    if undeclared:
+        probs.append(f"these balls are used but not declared, add (ball ballN) for each: {', '.join(sorted(undeclared))}")
     return probs
 
 
