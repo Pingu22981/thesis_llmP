@@ -63,7 +63,8 @@ def build_messages(domain_str, examples, query_nl):
         f"The domain is:\n{domain_str}\n\n"
         "Write only the PDDL problem definition. It must start with "
         "(define (problem ...)) and use only predicates from the domain above. "
-        "Do not include markdown fences, comments, or any explanation."
+        "Do not include markdown fences, comments, or any explanation. "
+        "Always state the robot's location with exactly one (at-robby ...) fact."
     )
     msgs = [{"role": "system", "content": system}]
     for ex in examples:
