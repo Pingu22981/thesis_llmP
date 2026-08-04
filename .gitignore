@@ -5,3 +5,17 @@ ollama_models/
 *.gguf
 *.bin
 *.safetensors
+*.gguf
+*.safetensors
+*.pt
+*.pth
+*.bin
+lora_cot/
+lora_bw/
+lora_bw_10k/
+lora_ft/
+train_bw.jsonl
+train_bw_10k.jsonl
+train_cot.jsonl
+output.sas
+*.log

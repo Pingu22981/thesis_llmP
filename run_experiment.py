@@ -144,7 +144,8 @@ def main():
         if pred:
             try:
                 parseable, solveable, equivalent = planetarium.evaluate(
-                    r["problem_pddl"], pred, domain_str=domain_str, check_solveable=False)
+                    r["problem_pddl"], pred, domain_str=domain_str,
+                    is_placeholder=bool(r.get("is_placeholder", 0)), check_solveable=False)
             except Exception as e:
                 raw += f"\n\n[evaluate error: {e}]"
         f.write(json.dumps({
