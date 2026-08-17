@@ -19,3 +19,10 @@ train_bw_10k.jsonl
 train_cot.jsonl
 output.sas
 *.log
+*.safetensors
+*.db
+*.gguf
+lora_*/
+smoke_*/
+bw_*.db
+data_gen*/
