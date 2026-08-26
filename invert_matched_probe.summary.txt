@@ -1,0 +1,3 @@
+invert_matched_probe: n=50 parseable 45/50 (90%) equivalent 0/50 (0%)
+exemplars: blocksworld_invert from test split, 4-shot, seed 42, llama3.1:8b
+compare: match.log (cross-type exemplars) n=500 parseable 75% equivalent 0%

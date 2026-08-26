@@ -1,0 +1,6 @@
+Batched evaluator verification, 2026-08-26
+lora_tower_s1 on tower_test.jsonl
+  old (unbatched, 08-20 10:00): 123/150 equivalent
+  new (batched bs=8):           123/150 equivalent, 150/150 parseable
+  identical -> batching does not alter greedy-decoding results
+  runtime 65m33s for 150 items
