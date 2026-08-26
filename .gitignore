@@ -26,3 +26,4 @@ lora_*/
 smoke_*/
 bw_*.db
 data_gen*/
+*.bak

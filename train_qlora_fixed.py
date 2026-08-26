@@ -8,7 +8,10 @@ ap=argparse.ArgumentParser()
 ap.add_argument("--data",required=True); ap.add_argument("--output",required=True)
 ap.add_argument("--epochs",type=int,default=3); ap.add_argument("--lr",type=float,default=2e-4)
 ap.add_argument("--max_len",type=int,default=4096)
+ap.add_argument("--seed",type=int,default=42)
 a=ap.parse_args()
+from transformers import set_seed
+set_seed(a.seed)
 
 BASE="meta-llama/Llama-3.1-8B-Instruct"
 tok=AutoTokenizer.from_pretrained(BASE)
@@ -31,7 +34,7 @@ ds=ds.map(fmt)
 resp_template="<|start_header_id|>assistant<|end_header_id|>"
 collator=DataCollatorForCompletionOnlyLM(response_template=resp_template,tokenizer=tok)
 
-cfg=SFTConfig(output_dir=a.output,num_train_epochs=a.epochs,learning_rate=a.lr,
+cfg=SFTConfig(output_dir=a.output,seed=a.seed,data_seed=a.seed,num_train_epochs=a.epochs,learning_rate=a.lr,
     per_device_train_batch_size=1,gradient_accumulation_steps=8,
     max_seq_length=a.max_len,logging_steps=5,save_strategy="no",
     bf16=True,gradient_checkpointing=True,dataset_text_field="text")

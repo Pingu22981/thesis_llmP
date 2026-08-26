@@ -124,9 +124,12 @@ def main():
         par1, eq1 = score(r["problem_pddl"], pred1, domain_str)
 
         pred_final, par_f, eq_f, retried = pred1, par1, eq1, False
-        if args.retry and pred1 and not eq1:
-            probs = find_omissions(pred1)
-            if probs:
+        # Gate retry on the HEURISTIC only (find_omissions), never on eq1.
+        # eq1 is ground-truth equivalence; using it would make retry oracle-dependent
+        # and unrepresentative of any deployed system.
+        probs = find_omissions(pred1) if (args.retry and pred1) else []
+        if probs:
+            if True:
                 retried = True
                 msg = "; ".join(probs)
                 msgs2 = msgs + [

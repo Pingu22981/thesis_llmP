@@ -33,13 +33,18 @@ def load_domain(domain):
     return path.read_text()
 
 
-def pick_examples(ds, domain, k, exclude_ids, example_abstract=0):
-    """k fixed examples from train, smallest by object count, no overlap with test slice.
-    example_abstract selects concrete (0) or abstract (1) worked examples."""
+def pick_examples(ds, domain, k, exclude_ids, example_abstract=0,
+                  type_prefix=None, source_split=None):
+    """k fixed examples, smallest by object count, no overlap with test slice.
+    example_abstract selects concrete (0) or abstract (1) worked examples.
+    type_prefix restricts examples to one goal type, e.g. 'blocksworld_invert'.
+    source_split overrides which split examples come from (default train)."""
     if k == 0:
         return []
-    split = "train" if "train" in ds else "test"
+    split = source_split or ("train" if "train" in ds else "test")
     pool = ds[split].filter(lambda r: r["domain"] == domain and r["goal_is_abstract"] == example_abstract)
+    if type_prefix is not None:
+        pool = pool.filter(lambda r: r["name"].split("_to_")[0] == type_prefix)
     pool = pool.sort("num_objects")
     cands = [r for r in pool if r["id"] not in exclude_ids]
     if not cands:
@@ -99,6 +104,12 @@ def main():
     ap.add_argument("--model", default="llama3.1:8b")
     ap.add_argument("--match-examples", action="store_true",
                     help="use worked examples matching the query goal type")
+    ap.add_argument("--example-type", default=None,
+                    help="restrict worked examples to one goal type prefix, e.g. blocksworld_invert")
+    ap.add_argument("--example-split", default=None,
+                    help="split to draw worked examples from (default: train)")
+    ap.add_argument("--test-type", default=None,
+                    help="restrict test items to one goal type prefix, e.g. blocksworld_invert")
     ap.add_argument("--num-objects", type=int, default=None,
                     help="restrict test items to exactly this many objects")
     ap.add_argument("--output", default=None)
@@ -112,13 +123,24 @@ def main():
         test = test.filter(lambda r: r["goal_is_abstract"] == 1)
     elif args.goal_type == "concrete":
         test = test.filter(lambda r: r["goal_is_abstract"] == 0)
+    if args.test_type is not None:
+        test = test.filter(lambda r: r["name"].split("_to_")[0] == args.test_type)
     if args.num_objects is not None:
         test = test.filter(lambda r: r["num_objects"] == args.num_objects)
     test = test.shuffle(seed=args.seed).select(range(min(args.n, len(test))))
     test_ids = set(test["id"])
 
     ex_abstract = 1 if (args.match_examples and args.goal_type == "abstract") else 0
-    examples = pick_examples(ds, args.domain, args.shots, exclude_ids=test_ids, example_abstract=ex_abstract)
+    examples = pick_examples(ds, args.domain, args.shots, exclude_ids=test_ids,
+                             example_abstract=ex_abstract,
+                             type_prefix=args.example_type,
+                             source_split=args.example_split)
+    ex_ids = set(r["id"] for r in examples)
+    assert not (ex_ids & test_ids), "worked examples overlap the evaluated test items"
+    ex_types = sorted(set(r["name"].split("_to_")[0] for r in examples))
+    test_types = sorted(set(r["name"].split("_to_")[0] for r in test))
+    print(f"example types: {ex_types}", flush=True)
+    print(f"test types:    {test_types}", flush=True)
     print(f"{args.domain} {args.shots}-shot {args.goal_type}: {len(test)} items, {len(examples)} examples in prompt", flush=True)
 
     out_path = Path(args.output or f"{args.domain}_{args.shots}shot_{args.goal_type}.jsonl")
