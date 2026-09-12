@@ -108,7 +108,7 @@ def main():
         with torch.no_grad():
             out = model.generate(input_ids=enc.input_ids,
                                  attention_mask=enc.attention_mask,
-                                 max_new_tokens=768, do_sample=False,
+                                 max_new_tokens=512, do_sample=False,
                                  pad_token_id=tok.eos_token_id,
                                  stopping_criteria=sc)
 
