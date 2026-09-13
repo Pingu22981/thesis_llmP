@@ -1,0 +1,25 @@
+nohup: ignoring input
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Filter:   0%|          | 0/15943 [00:00<?, ? examples/s]Filter:  19%|█▉        | 3000/15943 [00:00<00:00, 20341.74 examples/s]Filter:  44%|████▍     | 7000/15943 [00:00<00:00, 20803.96 examples/s]Filter:  63%|██████▎   | 10000/15943 [00:00<00:00, 20380.39 examples/s]Filter:  88%|████████▊ | 14000/15943 [00:00<00:00, 20988.66 examples/s]Filter: 100%|██████████| 15943/15943 [00:00<00:00, 20799.17 examples/s]
+Filter:   0%|          | 0/4993 [00:00<?, ? examples/s]Filter:  20%|██        | 1000/4993 [00:00<00:00, 8299.14 examples/s]Filter:  40%|████      | 2000/4993 [00:00<00:00, 7683.21 examples/s]Filter:  60%|██████    | 3000/4993 [00:00<00:00, 7846.16 examples/s]Filter:  80%|████████  | 4000/4993 [00:00<00:00, 7842.59 examples/s]Filter: 100%|██████████| 4993/4993 [00:00<00:00, 7952.55 examples/s]Filter: 100%|██████████| 4993/4993 [00:00<00:00, 7744.47 examples/s]
+blocksworld 0-shot concrete: 500 items, 0 examples in prompt
+[1/500] parseable=False equivalent=False
+[2/500] parseable=False equivalent=False
+[3/500] parseable=False equivalent=False
+[4/500] parseable=False equivalent=False
+[5/500] parseable=False equivalent=False
+[6/500] parseable=True equivalent=False
+[7/500] parseable=False equivalent=False
+[8/500] parseable=False equivalent=False
+[9/500] parseable=False equivalent=False
+[10/500] parseable=True equivalent=False
+[11/500] parseable=False equivalent=False
+[12/500] parseable=False equivalent=False
+[13/500] parseable=False equivalent=False
+[14/500] parseable=False equivalent=False
+[15/500] parseable=False equivalent=False
+[16/500] parseable=False equivalent=False
+[17/500] parseable=False equivalent=False
+[18/500] parseable=False equivalent=False
+[19/500] parseable=False equivalent=False
+[20/500] parseable=False equivalent=False

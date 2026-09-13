@@ -115,7 +115,7 @@ def finish_bars(ax, xs_list, vals_list, errs_list):
     top = max((v + e
                for vals, errs in zip(vals_list, errs_list)
                for v, e in zip(vals, errs)), default=0.0)
-    ax.set_ylim(0, top * 1.2 if top > 0 else 1.0)
+    ax.set_ylim(0, top * 1.28 if top > 0 else 1.0)
     ymax = ax.get_ylim()[1]
     for xs, vals, errs in zip(xs_list, vals_list, errs_list):
         for x, v, e in zip(xs, vals, errs):
@@ -203,7 +203,7 @@ def fig_heldsize():
     ax.set_xticklabels(labels)
     ax.set_ylabel("Equivalence (%)")
     ax.set_title("In-domain vs held-out-size performance")
-    ax.legend(frameon=False)
+    ax.legend(loc="upper left", bbox_to_anchor=(1.02, 1.0), frameon=False)
     finish_bars(ax, [x - w / 2, x + w / 2], [ind, held], [inde, helde])
     save(fig, "fig2_indomain_vs_heldout")
 

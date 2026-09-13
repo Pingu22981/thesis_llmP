@@ -1,0 +1,5 @@
+ORIGINAL abstract fine-tuning (buggy trainer, loss over full input)
+  2k  (1400 abstract + 600 concrete): parseable 415/500 (83%) equivalent 2/500 (0.4%)
+  10k (7000 abstract + 3000 concrete): parseable 420/500 (84%) equivalent 6/500 (1.2%)
+  eval: run_experiment.py, 4-shot, via Ollama, Planetarium test split (invert+swap)
+  NOTE: train split types are disjoint from test types, so this was a cross-type test

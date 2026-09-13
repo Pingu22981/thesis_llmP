@@ -80,6 +80,7 @@ def main():
     ap.add_argument("--domain", default="blocksworld", choices=["blocksworld", "gripper"])
     ap.add_argument("--n", type=int, default=300)
     ap.add_argument("--model", default="llama3.1:8b")
+    ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--output", default=None)
     args = ap.parse_args()
 
@@ -98,7 +99,7 @@ def main():
 
     test = ds["test"].filter(
         lambda r: r["domain"] == args.domain and r["id"] != ex["id"]
-    ).select(range(args.n))
+    ).shuffle(seed=args.seed).select(range(args.n))
 
     f = out_path.open("a")
     for i, r in enumerate(test):
@@ -115,7 +116,9 @@ def main():
         if pred:
             try:
                 parseable, solveable, equivalent = planetarium.evaluate(
-                    r["problem_pddl"], pred, domain_str=domain_str, check_solveable=False)
+                    r["problem_pddl"], pred, domain_str=domain_str,
+                    is_placeholder=bool(r.get("is_placeholder", 0)),
+                    check_solveable=False)
             except Exception as e:
                 raw += f"\n\n[evaluate error: {e}]"
         row = {
