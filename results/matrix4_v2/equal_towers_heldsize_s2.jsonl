@@ -8,7 +8,7 @@
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_5_5_7_7", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_2_3_4_6_6", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_3_4_6_6_9", "parseable": false, "equivalent": false}
-{"name": "blocksworld_tower_to_equal_towers_blocks_list_2_2_3_4_14", "parseable": false, "equivalent": false}
+{"name": "blocksworld_tower_to_equal_towers_blocks_list_2_2_3_4_14", "parseable": true, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_4_7_7_8", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_3_4_4_5_5_5", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_3_4_7_10", "parseable": false, "equivalent": false}
@@ -25,7 +25,7 @@
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_7_15", "parseable": true, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_3_3_5_14", "parseable": true, "equivalent": true}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_3_6_6_11", "parseable": false, "equivalent": false}
-{"name": "blocksworld_tower_to_equal_towers_blocks_list_2_3_3_3_3_13", "parseable": false, "equivalent": false}
+{"name": "blocksworld_tower_to_equal_towers_blocks_list_2_3_3_3_3_13", "parseable": true, "equivalent": true}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_2_4_5_7_8", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_2_10_14", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_4_6_8_10", "parseable": false, "equivalent": false}
@@ -88,13 +88,13 @@
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_3_3_20", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_3_5_13", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_2_2_2_4_4_5", "parseable": false, "equivalent": false}
-{"name": "blocksworld_tower_to_equal_towers_blocks_list_3_3_4_7_10", "parseable": false, "equivalent": false}
+{"name": "blocksworld_tower_to_equal_towers_blocks_list_3_3_4_7_10", "parseable": true, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_2_3_5_10", "parseable": true, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_2_2_3_6_6", "parseable": false, "equivalent": false}
-{"name": "blocksworld_tower_to_equal_towers_blocks_list_2_3_4_18", "parseable": false, "equivalent": false}
+{"name": "blocksworld_tower_to_equal_towers_blocks_list_2_3_4_18", "parseable": true, "equivalent": true}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_4_4_5_7", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_3_3_3_4_5_8", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_3_3_3_4_6_6", "parseable": true, "equivalent": false}
-{"name": "blocksworld_tower_to_equal_towers_blocks_list_2_6_19", "parseable": false, "equivalent": false}
+{"name": "blocksworld_tower_to_equal_towers_blocks_list_2_6_19", "parseable": true, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_2_3_4_6_8", "parseable": false, "equivalent": false}
 {"name": "blocksworld_tower_to_equal_towers_blocks_list_7_21", "parseable": false, "equivalent": false}

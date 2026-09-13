@@ -1,7 +1,7 @@
 {"name": "blocksworld_swap_to_swap_blocks_list_11_22", "parseable": false, "equivalent": false}
-{"name": "blocksworld_swap_to_swap_blocks_list_4_26", "parseable": false, "equivalent": false}
+{"name": "blocksworld_swap_to_swap_blocks_list_4_26", "parseable": true, "equivalent": true}
 {"name": "blocksworld_swap_to_swap_blocks_list_6_15", "parseable": true, "equivalent": true}
-{"name": "blocksworld_swap_to_swap_blocks_list_24_6", "parseable": false, "equivalent": false}
+{"name": "blocksworld_swap_to_swap_blocks_list_24_6", "parseable": true, "equivalent": false}
 {"name": "blocksworld_swap_to_swap_blocks_list_10_19", "parseable": false, "equivalent": false}
 {"name": "blocksworld_swap_to_swap_blocks_list_14_7", "parseable": true, "equivalent": true}
 {"name": "blocksworld_swap_to_swap_blocks_list_15_10", "parseable": false, "equivalent": false}
@@ -27,4 +27,4 @@
 {"name": "blocksworld_swap_to_swap_blocks_list_24_2", "parseable": true, "equivalent": false}
 {"name": "blocksworld_swap_to_swap_blocks_list_28_5", "parseable": false, "equivalent": false}
 {"name": "blocksworld_swap_to_swap_blocks_list_7_23", "parseable": false, "equivalent": false}
-{"name": "blocksworld_swap_to_swap_blocks_list_27_3", "parseable": false, "equivalent": false}
+{"name": "blocksworld_swap_to_swap_blocks_list_27_3", "parseable": true, "equivalent": false}

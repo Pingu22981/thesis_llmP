@@ -37,7 +37,7 @@ LABEL = {"invert": "invert", "swap": "swap", "tower": "tower",
 FLAT  = {"invert": "invert", "swap": "swap", "tower": "tower",
          "equal_towers": "equal towers"}
 
-R   = Path("results/matrix4")
+R   = Path("results/matrix4_v2")
 OUT = Path("figs")
 OUT.mkdir(exist_ok=True)
 
@@ -144,6 +144,7 @@ def fig_matrix():
 
     fig, ax = plt.subplots(figsize=(6.5, 5.4))
     im = ax.imshow(M, cmap="viridis", vmin=0, vmax=100, aspect="auto")
+    ax.grid(False)  # remove whitegrid dashes through cells
 
     ax.set_xticks(range(len(TYPES)))
     ax.set_xticklabels([LABEL[t] for t in TYPES])
@@ -329,7 +330,7 @@ def main():
     print(f"reading results from {R}/")
     fig_matrix()
     fig_heldsize()
-    fig_asymmetry()
+
     fig_mechanism()
     print_summary()
     print("\ndone -> figs/")
