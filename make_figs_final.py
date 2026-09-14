@@ -9,7 +9,7 @@ Outputs four PDF + PNG pairs (300 dpi, bbox_inches="tight") to figs/.
     fig1_matrix_heatmap       4x4 train->test equivalence heatmap + base row
     fig2_indomain_vs_heldout  in-domain vs held-out-size grouped bars
     fig3_transfer_asymmetry   three paired A->B / B->A bars
-    fig4_mechanism_invert     base vs 4-shot vs fine-tuned on invert
+    fig3_mechanism_invert     base vs 4-shot vs fine-tuned on invert
 
 Usage: python make_figs_final.py
 """
@@ -299,7 +299,7 @@ def fig_mechanism():
         xy=(0.03, 0.97), xycoords="axes fraction",
         va="top", fontsize=11, style="italic", color="#666666")
 
-    save(fig, "fig4_mechanism_invert")
+    save(fig, "fig3_mechanism_invert")
 
 def print_summary():
     print("\ncomputed equivalence % (mean±sd over seeds):")
