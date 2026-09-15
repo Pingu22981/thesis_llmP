@@ -89,18 +89,21 @@ def rate(path: str):
 
 def cell(pattern: str):
     """(mean, sd, n_seeds) across files matching pattern.
-    Returns (None, None, 0) when nothing matches; prints a warning."""
+    Mean and sample sd (ddof=1) over per-seed equivalence rates, computed once."""
     files = sorted(glob.glob(pattern))
     if not files:
         print(f"warning: no files match {pattern}")
         return None, None, 0
     vals = [v for v in (rate(f) for f in files) if v is not None]
     if not vals:
-        print(f"warning: no rates computed for {pattern}")
         return None, None, 0
-    mean = st.mean(vals)
-    sd   = st.stdev(vals) if len(vals) > 1 else 0.0
-    return mean, sd, len(vals)
+    m = sum(vals) / len(vals)              # mean of per-seed rates
+    if len(vals) > 1:
+        var = sum((v - m) ** 2 for v in vals) / (len(vals) - 1)  # sample variance, ddof=1
+        sd = var ** 0.5
+    else:
+        sd = 0.0
+    return m, sd, len(vals)
 
 
 def save(fig, name: str):
