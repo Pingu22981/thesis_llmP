@@ -1,2 +1,0 @@
-FROM llama3.1:8b
-ADAPTER /workspace/llm_p/lora_bw_10k.gguf
