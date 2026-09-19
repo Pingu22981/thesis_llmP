@@ -2,7 +2,7 @@
 {"name": "blocksworld_invert_to_invert_blocks_list_4_4_6_6", "parseable": true, "equivalent": false}
 {"name": "blocksworld_invert_to_invert_blocks_list_3_3_9", "parseable": true, "equivalent": false}
 {"name": "blocksworld_invert_to_invert_blocks_list_3_12", "parseable": true, "equivalent": false}
-{"name": "blocksworld_invert_to_invert_blocks_list_2_4_4_6", "parseable": true, "equivalent": false}
+{"name": "blocksworld_invert_to_invert_blocks_list_2_4_4_6", "parseable": false, "equivalent": false}
 {"name": "blocksworld_invert_to_invert_blocks_list_3_4_9", "parseable": true, "equivalent": false}
 {"name": "blocksworld_invert_to_invert_blocks_list_2_2_3_5_5", "parseable": true, "equivalent": false}
 {"name": "blocksworld_invert_to_invert_blocks_list_3_10", "parseable": true, "equivalent": false}
@@ -84,7 +84,7 @@
 {"name": "blocksworld_invert_to_invert_blocks_list_3_4_5_7", "parseable": true, "equivalent": false}
 {"name": "blocksworld_invert_to_invert_blocks_list_2_2_2_2_5", "parseable": true, "equivalent": false}
 {"name": "blocksworld_invert_to_invert_blocks_list_2_3_3_4_4", "parseable": true, "equivalent": false}
-{"name": "blocksworld_invert_to_invert_blocks_list_2_8_9", "parseable": true, "equivalent": false}
+{"name": "blocksworld_invert_to_invert_blocks_list_2_8_9", "parseable": false, "equivalent": false}
 {"name": "blocksworld_invert_to_invert_blocks_list_5_7_7", "parseable": true, "equivalent": false}
 {"name": "blocksworld_invert_to_invert_blocks_list_2_3_3_3_3_5", "parseable": true, "equivalent": false}
 {"name": "blocksworld_invert_to_invert_blocks_list_4_5_9", "parseable": true, "equivalent": false}
