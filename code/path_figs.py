@@ -1,10 +1,4 @@
-"""
-Patches make_figs_final.py in place:
-  - adds matplotlib.ticker import
-  - replaces fig_asymmetry with symlog version
-  - replaces fig_mechanism with grey-zero-bars version
-Run from /workspace/llm_p: python patch_figs.py
-"""
+
 import re
 
 PATH = "/workspace/llm_p/make_figs_final.py"
