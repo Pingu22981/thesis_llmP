@@ -1,18 +1,4 @@
-"""
-Publication-quality figures for the cross-abstraction-type generalisation matrix.
 
-Reads results/matrix4/*.jsonl at runtime; the only hardcoded number is the
-4-shot type-matched probe (0.0%, n = 50), noted in Figure 4.
-
-Outputs four PDF + PNG pairs (300 dpi, bbox_inches="tight") to figs/.
-
-    fig1_matrix_heatmap       4x4 train->test equivalence heatmap + base row
-    fig2_indomain_vs_heldout  in-domain vs held-out-size grouped bars
-    fig3_transfer_asymmetry   three paired A->B / B->A bars
-    fig3_mechanism_invert     base vs 4-shot vs fine-tuned on invert
-
-Usage: python make_figs_final.py
-"""
 
 import glob
 import json
